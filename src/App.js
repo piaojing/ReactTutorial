@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  render(){
+    return <Board/>
+  }
+}
+
+class Board extends Component{
+  renderSquare(i){
+    return <Square value={i}/>
+  }
+}
+
+class Square extends Component{
+  render(){
+    return(
+      <button className="square">{this.props.value}</button>
+    )
+  }
 }
 
 export default App;
